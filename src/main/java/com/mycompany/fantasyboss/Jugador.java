@@ -6,28 +6,32 @@ package com.mycompany.fantasyboss;
 
 import java.io.Serializable;
 
-/**
- *
- * @author nicke
- */
 public class Jugador implements Serializable {
-    
     private String nombre;
+    private String posicion;
     private int precio;
-    private boolean fichado;
 
-    public Jugador(String nombre, int precio) {
+    public Jugador(String nombre, String posicion, int precio) {
         this.nombre = nombre;
+        this.posicion = posicion;
         this.precio = precio;
-        fichado=false;
     }
 
+    // Getters y setters
     public String getNombre() {
         return nombre;
     }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getPosicion() {
+        return posicion;
+    }
+
+    public void setPosicion(String posicion) {
+        this.posicion = posicion;
     }
 
     public int getPrecio() {
@@ -38,16 +42,12 @@ public class Jugador implements Serializable {
         this.precio = precio;
     }
 
-    public boolean isFichado() {
-        return fichado;
-    }
-
-    public void setFichado(boolean fichado) {
-        this.fichado = fichado;
-    }
-    
-    public void imprimir () {
-        System.out.println(""+nombre+" "+precio);
+    @Override
+    public String toString() {
+        return "Jugador{" +
+                "nombre='" + nombre + '\'' +
+                ", posicion='" + posicion + '\'' +
+                ", precio=" + precio +
+                '}';
     }
 }
-    
